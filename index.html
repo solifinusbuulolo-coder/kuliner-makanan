@@ -1,0 +1,1306 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kuliner Solo - Nikmati aneka makanan khas Solo dengan cita rasa autentik dan harga bersahabat.">
+  <title>Kuliner Solo | Cita Rasa Khas Kota Solo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #a83d22;
+      --primary-dark: #782817;
+      --gold: #e7b75b;
+      --cream: #fffaf2;
+      --dark: #29231f;
+      --muted: #77716a;
+      --white: #ffffff;
+      --shadow: 0 12px 35px rgba(54, 35, 20, .09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--dark);
+      background: var(--cream);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary);
+      background: #f8e9df;
+      padding: 7px 17px;
+      border-radius: 30px;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* NAVBAR */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 250, 242, .96);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 3px 20px rgba(0,0,0,.05);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--primary);
+      color: white;
+      font-size: 21px;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      color: var(--primary);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: .9rem;
+      font-weight: 600;
+      transition: .25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 22px;
+      font-family: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      color: var(--dark);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 630px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(35,22,15,.88), rgba(35,22,15,.48)),
+        url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=85') center/cover;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      padding: 100px 0;
+    }
+
+    .hero-label {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 30px;
+      font-size: .8rem;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.12;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 570px;
+      color: #f3e9df;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      height: 440px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .image-note {
+      position: absolute;
+      bottom: 20px;
+      right: -18px;
+      background: white;
+      padding: 17px 23px;
+      border-radius: 13px;
+      box-shadow: var(--shadow);
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .about-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .about-points {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .point {
+      display: flex;
+      gap: 11px;
+      align-items: center;
+      font-weight: 700;
+      font-size: .9rem;
+    }
+
+    .point i {
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    /* MENU */
+    .menu-section {
+      background: #f7eee3;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .menu-card {
+      background: white;
+      border-radius: 17px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: .3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .menu-image {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-image img {
+      height: 100%;
+      transition: .5s;
+    }
+
+    .menu-card:hover .menu-image img {
+      transform: scale(1.07);
+    }
+
+    .menu-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 6px 12px;
+      background: var(--gold);
+      color: #382514;
+      border-radius: 20px;
+      font-size: .72rem;
+      font-weight: 800;
+    }
+
+    .menu-body {
+      padding: 21px;
+    }
+
+    .menu-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+    }
+
+    .menu-body p {
+      color: var(--muted);
+      font-size: .88rem;
+      min-height: 70px;
+    }
+
+    .menu-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 15px;
+      border-top: 1px solid #eee8e1;
+    }
+
+    .price {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .order-btn {
+      border: none;
+      border-radius: 9px;
+      padding: 10px 14px;
+      background: var(--primary);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .order-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    /* FEATURES */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 30px 20px;
+      border-radius: 15px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      border-radius: 18px;
+      background: #f8e9df;
+      color: var(--primary);
+      font-size: 25px;
+    }
+
+    .feature-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: #f7eee3;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 35px;
+    }
+
+    .contact-info {
+      background: var(--primary-dark);
+      color: white;
+      padding: 35px;
+      border-radius: 18px;
+    }
+
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      margin-bottom: 22px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      margin: 23px 0;
+    }
+
+    .contact-item i {
+      color: var(--gold);
+      font-size: 20px;
+      margin-top: 4px;
+    }
+
+    .contact-item p {
+      color: #f1dfd2;
+      font-size: .9rem;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-form > p {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-bottom: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .87rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #e8dfd5;
+      border-radius: 9px;
+      font-family: inherit;
+      font-size: .9rem;
+      outline: none;
+      background: #fffdfa;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #261d18;
+      color: white;
+      padding: 55px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    .footer h3,
+    .footer h4 {
+      margin-bottom: 17px;
+    }
+
+    .footer p,
+    .footer a {
+      color: #c9bdb4;
+      font-size: .88rem;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      text-align: center;
+      color: #b7aaa0;
+      font-size: .82rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: .8rem;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        min-height: 70px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-order {
+        display: none;
+      }
+
+      .hero {
+        min-height: 560px;
+      }
+
+      .hero-content {
+        padding: 80px 0;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image img {
+        height: 330px;
+      }
+
+      .image-note {
+        right: 10px;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .features-grid,
+      .about-points {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .contact-info,
+      .contact-form {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGASI -->
+  <header class="header">
+    <div class="container navbar">
+
+      <a href="#beranda" class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-utensils"></i>
+        </div>
+        <div>
+          <span class="brand-name">Kuliner Solo</span>
+          <span class="brand-sub">CITA RASA NUSANTARA</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka navigasi">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+
+      <a href="#menu" class="btn btn-primary nav-order">
+        <i class="fa-solid fa-bag-shopping"></i> Pesan Menu
+      </a>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="beranda">
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-label">
+          <i class="fa-solid fa-location-dot"></i>
+          Selamat Datang di Kota Solo
+        </div>
+
+        <h1>
+          Nikmati Kelezatan
+          <span>Kuliner Khas Solo</span>
+        </h1>
+
+        <p>
+          Temukan kelezatan makanan tradisional Kota Solo.
+          Dari nasi liwet yang gurih hingga serabi yang manis,
+          setiap hidangan menghadirkan cita rasa istimewa
+          dan kehangatan kuliner khas Jawa.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">
+            <i class="fa-solid fa-utensils"></i> Lihat Menu
+          </a>
+
+          <a href="#tentang" class="btn btn-outline">
+            Tentang Kami
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section class="section" id="tentang">
+    <div class="container about-grid">
+
+      <div class="about-image">
+        <img
+          src="sat buntel.jpg"
+          alt="Hidangan makanan tradisional"
+        >
+        <div class="image-note">
+          <i class="fa-solid fa-heart"></i>
+          Cita Rasa Istimewa
+        </div>
+      </div>
+
+      <div class="about-text">
+        <span class="eyebrow">Tentang Kuliner Solo</span>
+
+        <h2>Melestarikan Kelezatan Kuliner Tradisional Solo</h2>
+
+        <p>
+          Kuliner Solo hadir untuk memperkenalkan kekayaan makanan
+          tradisional Kota Surakarta kepada masyarakat luas.
+        </p>
+
+        <p>
+          Kami mengangkat berbagai hidangan khas Solo yang dikenal
+          dengan cita rasa gurih, manis, dan kaya rempah. Setiap
+          makanan memiliki cerita dan keunikan tersendiri yang
+          menjadi bagian dari budaya kuliner Jawa.
+        </p>
+
+        <p>
+          Melalui Kuliner Solo, kami ingin menghadirkan pengalaman
+          menikmati makanan tradisional dengan pelayanan ramah,
+          suasana nyaman, dan harga yang bersahabat.
+        </p>
+
+        <div class="about-points">
+          <div class="point">
+            <i class="fa-solid fa-check-circle"></i>
+            Bahan Berkualitas
+          </div>
+
+          <div class="point">
+            <i class="fa-solid fa-check-circle"></i>
+            Rasa Autentik
+          </div>
+
+          <div class="point">
+            <i class="fa-solid fa-check-circle"></i>
+            Harga Bersahabat
+          </div>
+
+          <div class="point">
+            <i class="fa-solid fa-check-circle"></i>
+            Pelayanan Ramah
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="section menu-section" id="menu">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Menu Pilihan</span>
+        <h2>Jelajahi Menu Favorit Kuliner Solo</h2>
+        <p>
+          Nikmati berbagai hidangan khas Solo yang lezat,
+          menggugah selera, dan dibuat dengan bahan pilihan.
+        </p>
+      </div>
+
+      <div class="menu-grid">
+
+        <!-- NASI LIWET -->
+        <article class="menu-card">
+          <div class="menu-image">
+            <img
+              src="nasiliwet.jpg"
+              alt="Nasi Liwet Solo"
+              loading="lazy"
+            >
+            <span class="menu-tag">Menu Favorit</span>
+          </div>
+          <div class="menu-body">
+            <h3>Nasi Liwet Solo</h3>
+            <p>
+              Nasi gurih dengan santan, suwiran ayam, sayur labu siam,
+              telur, dan areh khas Solo.
+            </p>
+            <div class="menu-bottom">
+              <span class="price">Rp 18.000</span>
+              <button class="order-btn" onclick="orderMenu('Nasi Liwet Solo',18000)">
+                <i class="fa-brands fa-whatsapp"></i> Pesan
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SELAT SOLO -->
+        <article class="menu-card">
+          <div class="menu-image">
+            <img
+              src="ayamgoreng widuran.png"
+              alt="Selat Solo"
+              loading="lazy"
+            >
+            <span class="menu-tag">Khas Solo</span>
+          </div>
+          <div class="menu-body">
+            <h3>Ayam goreng widuran</h3>
+            <p>
+              Daging sapi empuk dengan kuah manis gurih,
+              sayuran, kentang, telur, dan saus khas.
+            </p>
+            <div class="menu-bottom">
+              <span class="price">Rp 25.000</span>
+              <button class="order-btn" onclick="orderMenu('Selat Solo',25000)">
+                <i class="fa-brands fa-whatsapp"></i> Pesan
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- TIMLO -->
+        <article class="menu-card">
+          <div class="menu-image">
+            <img
+              src="timlo.jpg"
+              alt="Timlo Solo"
+              loading="lazy"
+            >
+            <span class="menu-tag">Menu Tradisional</span>
+          </div>
+          <div class="menu-body">
+            <h3>Timlo Solo</h3>
+            <p>
+              Sup bening dengan suwiran ayam, sosis solo,
+              telur pindang, dan kuah kaldu yang segar.
+            </p>
+            <div class="menu-bottom">
+              <span class="price">Rp 20.000</span>
+              <button class="order-btn" onclick="orderMenu('Timlo Solo',20000)">
+                <i class="fa-brands fa-whatsapp"></i> Pesan
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SATE BUNTEL -->
+        <article class="menu-card">
+          <div class="menu-image">
+            <img
+              src="sat buntel.jpg"
+              alt="Sate Buntel"
+              loading="lazy"
+            >
+            <span class="menu-tag">Spesial</span>
+          </div>
+          <div class="menu-body">
+            <h3>Sate Buntel</h3>
+            <p>
+              Daging kambing cincang berbumbu yang dibungkus
+              lemak tipis dan dibakar hingga harum.
+            </p>
+            <div class="menu-bottom">
+              <span class="price">Rp 30.000</span>
+              <button class="order-btn" onclick="orderMenu('Sate Buntel',30000)">
+                <i class="fa-brands fa-whatsapp"></i> Pesan
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- SERABI -->
+        <article class="menu-card">
+          <div class="menu-image">
+            <img
+              src="serabisolo.jpg"
+              alt="Serabi Solo"
+              loading="lazy"
+            >
+            <span class="menu-tag">Camilan</span>
+          </div>
+          <div class="menu-body">
+            <h3>Serabi Solo</h3>
+            <p>
+              Kue tradisional berbahan santan dan tepung beras
+              dengan rasa manis dan tekstur lembut.
+            </p>
+            <div class="menu-bottom">
+              <span class="price">Rp 10.000</span>
+              <button class="order-btn" onclick="orderMenu('Serabi Solo',10000)">
+                <i class="fa-brands fa-whatsapp"></i> Pesan
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- ES DAWET -->
+        <article class="menu-card">
+          <div class="menu-image">
+            <img
+              src="EsDawetSelasih.png"
+              alt="Es Dawet"
+              loading="lazy"
+            >
+            <span class="menu-tag">Minuman Segar</span>
+          </div>
+          <div class="menu-body">
+            <h3>Es Dawet</h3>
+            <p>
+              Minuman segar dengan cendol, santan, gula merah,
+              dan es yang menyegarkan.
+            </p>
+            <div class="menu-bottom">
+              <span class="price">Rp 8.000</span>
+              <button class="order-btn" onclick="orderMenu('Es Dawet',8000)">
+                <i class="fa-brands fa-whatsapp"></i> Pesan
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KEUNGGULAN -->
+  <section class="section" id="keunggulan">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Keunggulan Kami</span>
+        <h2>Mengapa Memilih Kuliner Solo?</h2>
+        <p>
+          Kami berkomitmen menghadirkan pengalaman kuliner
+          yang menyenangkan untuk setiap pelanggan.
+        </p>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3>Bahan Berkualitas</h3>
+          <p>Menggunakan bahan pilihan yang segar untuk setiap hidangan.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-bowl-food"></i>
+          </div>
+          <h3>Rasa Tradisional</h3>
+          <p>Menghadirkan cita rasa khas Solo yang kaya dan istimewa.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-wallet"></i>
+          </div>
+          <h3>Harga Terjangkau</h3>
+          <p>Berbagai pilihan menu dengan harga bersahabat.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3>Pelayanan Ramah</h3>
+          <p>Memberikan pelayanan terbaik untuk kenyamanan pelanggan.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section class="section contact-section" id="kontak">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">Hubungi Kami</span>
+        <h2>Kunjungi Kuliner Solo</h2>
+        <p>
+          Kami siap menyambut Anda untuk menikmati
+          berbagai hidangan khas Kota Solo.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h3>Informasi Kuliner Solo</h3>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Lokasi</strong>
+              <p>Kota Surakarta, Jawa Tengah, Indonesia</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <strong>Jam Operasional</strong>
+              <p>Senin - Minggu<br>09.00 - 22.00 WIB</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp</strong>
+              <p>Silakan hubungi nomor WhatsApp resmi usaha Anda.</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email</strong>
+              <p>halo@kulinersolo.id</p>
+            </div>
+          </div>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Kota+Surakarta"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline"
+            style="margin-top:15px"
+          >
+            <i class="fa-solid fa-map-location-dot"></i>
+            Lihat Lokasi Solo
+          </a>
+        </div>
+
+        <div class="contact-form">
+          <h3>Formulir Pemesanan</h3>
+          <p>Isi data berikut untuk mengirim pesanan melalui WhatsApp.</p>
+
+          <form id="orderForm">
+
+            <div class="form-group">
+              <label for="customerName">Nama Lengkap</label>
+              <input
+                type="text"
+                id="customerName"
+                placeholder="Masukkan nama Anda"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="customerPhone">Nomor WhatsApp</label>
+              <input
+                type="tel"
+                id="customerPhone"
+                placeholder="Contoh: 08123456789"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="customerMenu">Pilih Menu</label>
+              <select id="customerMenu" required>
+                <option value="">-- Pilih Menu --</option>
+                <option>Nasi Liwet Solo</option>
+                <option>Selat Solo</option>
+                <option>Timlo Solo</option>
+                <option>Sate Buntel</option>
+                <option>Serabi Solo</option>
+                <option>Es Dawet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="customerMessage">Catatan Pesanan</label>
+              <textarea
+                id="customerMessage"
+                placeholder="Tuliskan jumlah pesanan atau catatan lainnya..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-brands fa-whatsapp"></i>
+              Kirim Pesanan
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>
+            <i class="fa-solid fa-utensils"></i>
+            Kuliner Solo
+          </h3>
+          <p>
+            Mengenalkan kelezatan makanan khas Solo
+            dengan cita rasa tradisional yang istimewa.
+            Mari lestarikan kekayaan kuliner Indonesia.
+          </p>
+        </div>
+
+        <div>
+          <h4>Menu Navigasi</h4>
+          <div class="footer-links">
+            <a href="#beranda">Beranda</a>
+            <a href="#tentang">Tentang Kami</a>
+            <a href="#menu">Menu Makanan</a>
+            <a href="#keunggulan">Keunggulan</a>
+            <a href="#kontak">Kontak</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Lokasi Kami</h4>
+          <p>
+            Kota Surakarta,<br>
+            Jawa Tengah,<br>
+            Indonesia.
+          </p>
+          <p style="margin-top:12px">
+            <i class="fa-solid fa-clock"></i>
+            Setiap Hari, 09.00 - 22.00 WIB
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 <strong>Kuliner Solo</strong>.
+        Hak Cipta Dilindungi.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Nomor WhatsApp usaha.
+    // Ganti dengan nomor WhatsApp asli, gunakan kode negara 62.
+    const nomorWhatsApp = "6281234567890";
+
+    // Navigasi mobile
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function() {
+      navLinks.classList.toggle("show");
+
+      const icon = menuToggle.querySelector("i");
+
+      if (navLinks.classList.contains("show")) {
+        icon.classList.replace("fa-bars", "fa-xmark");
+      } else {
+        icon.classList.replace("fa-xmark", "fa-bars");
+      }
+    });
+
+    // Tutup navigasi setelah menu dipilih
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", function() {
+        navLinks.classList.remove("show");
+        menuToggle.querySelector("i").classList.replace("fa-xmark", "fa-bars");
+      });
+    });
+
+    // Format harga
+    function formatRupiah(angka) {
+      return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+      }).format(angka);
+    }
+
+    // Pemesanan langsung dari kartu menu
+    function orderMenu(namaMenu, harga) {
+      const pesan =
+        "Halo Kuliner Solo, saya ingin memesan:\n\n" +
+        "Menu: " + namaMenu + "\n" +
+        "Harga: " + formatRupiah(harga) + "\n\n" +
+        "Mohon informasi lebih lanjut. Terima kasih.";
+
+      const url =
+        "https://wa.me/" + nomorWhatsApp +
+        "?text=" + encodeURIComponent(pesan);
+
+      window.open(url, "_blank");
+    }
+
+    // Formulir pemesanan
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("customerName").value.trim();
+      const telepon = document.getElementById("customerPhone").value.trim();
+      const menu = document.getElementById("customerMenu").value;
+      const catatan = document.getElementById("customerMessage").value.trim();
+
+      if (!nama || !telepon || !menu) {
+        alert("Mohon lengkapi data pemesanan.");
+        return;
+      }
+
+      const pesan =
+        "Halo Kuliner Solo, saya ingin melakukan pemesanan.\n\n" +
+        "Nama: " + nama + "\n" +
+        "Nomor WhatsApp: " + telepon + "\n" +
+        "Menu: " + menu + "\n" +
+        "Catatan: " + (catatan || "-") + "\n\n" +
+        "Mohon konfirmasi pesanan saya. Terima kasih.";
+
+      const url =
+        "https://wa.me/" + nomorWhatsApp +
+        "?text=" + encodeURIComponent(pesan);
+
+      window.open(url, "_blank");
+    });
+  </script>
+
+</body>
+</html>
